@@ -1,0 +1,14 @@
+1. demo需要跟主流的接入方法一致：所有对外部对象，都要实际使用（打印）出来。
+2.测试case要有失败情况
+unity as账号没有
+
+
+
+整理每天的DAU
+
+建立测试目录
+权限归属整理
+
+
+unity分三种情况： Android ， iOS， Android&iOS
+cocos分两种：Android，  iOS
