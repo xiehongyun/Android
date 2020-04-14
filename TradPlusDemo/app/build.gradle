@@ -1,0 +1,65 @@
+apply plugin: 'com.android.application'
+
+repositories {
+    jcenter()
+    google()
+    mavenCentral()
+
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
+    defaultConfig {
+        applicationId "com.tradplus.demo"
+        minSdkVersion 23
+        targetSdkVersion 28
+        versionCode 3
+        versionName "3.10.5.9"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.android.support:appcompat-v7:28.+'
+
+    //Admob
+    implementation 'com.google.android.gms:play-services-ads:16.0.0'
+
+    //Facebook
+    implementation 'com.android.support:recyclerview-v7:28.+'
+    implementation 'com.facebook.android:audience-network-sdk:5.5.0' //or you can use aar
+//    implementation(name: 'AudienceNetwork', ext: 'aar')
+
+    //IronSource 6.9.1
+    implementation files('libs/mediationsdk-6.9.1.jar')
+
+    // Unity Ads
+    implementation(name: 'unity-ads', ext: 'aar')
+
+    //Vungle SDK 6.4.11
+    implementation files('libs/publisher-sdk-android-6.4.11.aar')
+    // Required Third-party Dependencies
+    implementation files('libs/converter-gson-2.5.0.jar')
+    implementation files('libs/gson-2.8.2.jar')
+    implementation files('libs/logging-interceptor-3.12.0.jar')
+    implementation files('libs/okhttp-3.12.0.jar')
+    implementation files('libs/okio-1.15.0.jar')
+    implementation files('libs/retrofit-2.5.0.jar')
+//    implementation 'com.vungle:publisher-sdk-android:6.4.11'
+    implementation 'com.google.android.gms:play-services-basement:16.0.0'
+    implementation 'com.google.android.gms:play-services-ads-identifier:16.0.0'
+
+
+}

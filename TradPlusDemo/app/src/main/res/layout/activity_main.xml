@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/banner_ad"
+                android:layout_width="200.0dip"
+                android:layout_height="50.0dip"
+                android:gravity="center"
+                android:text="Banner"
+                android:textAllCaps="false"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/native_ad_advanced"
+                android:layout_width="200.0dip"
+                android:layout_height="50.0dip"
+                android:gravity="center"
+                android:text="Native"
+                android:textAllCaps="false"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/interstitial_load"
+                android:layout_width="200.0dip"
+                android:layout_height="50.0dip"
+                android:gravity="center"
+                android:text="Interstitial_load"
+                android:textAllCaps="false"
+                android:textSize="16sp"/>
+
+            <Button
+                android:id="@+id/interstitial_show"
+                android:layout_width="200.0dip"
+                android:layout_height="50.0dip"
+                android:gravity="center"
+                android:text="Interstitial_show"
+                android:textAllCaps="false"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/reward_load"
+                android:layout_width="200.0dip"
+                android:layout_height="50.0dip"
+                android:gravity="center"
+                android:text="Reward_load"
+                android:textAllCaps="false"
+                android:textSize="16sp"/>
+
+            <Button
+                android:id="@+id/reward_show"
+                android:layout_width="200.0dip"
+                android:layout_height="50.0dip"
+                android:gravity="center"
+                android:text="Reward_show"
+                android:textAllCaps="false"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <com.flute.ads.mobileads.FluteView
+                android:id="@+id/NativeView"
+                android:layout_width="320dp"
+                android:layout_height="340dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentTop="true">
+            </com.flute.ads.mobileads.FluteView>
+
+        </LinearLayout>
+
+        <com.flute.ads.mobileads.FluteView
+            android:id="@+id/BannerView"
+            android:layout_width="320dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true">
+        </com.flute.ads.mobileads.FluteView>
+
+    </LinearLayout>
+</ScrollView>
