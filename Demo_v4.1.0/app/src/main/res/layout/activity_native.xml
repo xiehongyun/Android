@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_native"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <com.tradplus.ads.mobileads.TradPlusView
+        android:id="@+id/NativeView"
+        android:layout_width="320dp"
+        android:layout_height="340dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true">
+    </com.tradplus.ads.mobileads.TradPlusView>
+
+</RelativeLayout>
