@@ -1,0 +1,125 @@
+apply plugin: 'com.android.application'
+
+repositories {
+    jcenter ()
+    google ()
+    mavenCentral ()
+    //Adcolony
+    maven { url "https://adcolony.bintray.com/AdColony" }
+    //IronSource
+    maven { url "https://dl.bintray.com/ironsource-mobile/android-sdk" }
+    //Mopub
+    maven { url "https://s3.amazonaws.com/moat-sdk-builds" }
+    //Tapjoy
+    maven {
+        name "Tapjoy's maven repo"
+        url "https://tapjoy.bintray.com/maven"
+    }
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+android {
+    //mopub
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.tradplus.demo"
+        minSdkVersion 23
+        targetSdkVersion 28
+        versionCode 4
+        versionName "4.2.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    //补充Support v7插件的引入，否则会集成失败
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+
+    //TradPlus SDK
+    implementation (name: 'tradplus-sdk-android', ext: 'aar')
+
+    //Admob
+    implementation 'com.google.android.gms:play-services-ads:16.0.0'
+    implementation (name: 'google_ads-release', ext: 'aar')
+
+    //Facebook
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.facebook.android:audience-network-sdk:5.5.0'
+    implementation (name: 'facebook_ads-release', ext: 'aar')
+
+    //MoPub
+    // For banners
+    implementation ('com.mopub:mopub-sdk-banner:5.8.0') {
+        transitive = true
+    }
+    // For interstitials
+    implementation ('com.mopub:mopub-sdk-interstitial:5.8.0') {
+        transitive = true
+    }
+    // For rewarded videos. This will automatically also include interstitials
+    implementation ('com.mopub:mopub-sdk-rewardedvideo:5.8.0') {
+        transitive = true
+    }
+    // For native static (images).
+    implementation ('com.mopub:mopub-sdk-native-static:5.8.0') {
+        transitive = true
+    }
+    // For native video. This will automatically also include native static
+    implementation ('com.mopub:mopub-sdk-native-video:5.8.0') {
+        transitive = true
+    }
+    implementation (name: 'mopub_ads-release', ext: 'aar')
+
+    //AppLovin
+    implementation 'com.applovin:applovin-sdk:9.11.4'
+    implementation (name: 'applovin_ads-release', ext: 'aar')
+
+    //IronSource
+    implementation 'com.ironsource.sdk:mediationsdk:6.9.1@jar'
+    implementation (name: 'ironsource_ads-release', ext: 'aar')
+
+    //Unity Ads
+    implementation (name: 'unity-ads', ext: 'aar')
+
+    //Tapjoy
+    implementation 'com.tapjoy:tapjoy-android-sdk:12.4.2@aar'
+    implementation (name: 'tapjoy_ads-release', ext: 'aar')
+
+    //Adcolony
+    implementation 'com.adcolony:sdk:4.1.2'
+    implementation (name: 'adcolony_ads-release', ext: 'aar')
+
+    //Vungle
+    implementation 'com.vungle:publisher-sdk-android:6.4.11'
+//    implementation files ('libs/converter-gson-2.5.0.jar')
+//    implementation files ('libs/gson-2.8.2.jar')
+//    implementation files ('libs/logging-interceptor-3.12.0.jar')
+//    implementation files ('libs/okhttp-3.12.0.jar')
+//    implementation files ('libs/okio-1.15.0.jar')
+//    implementation files ('libs/retrofit-2.5.0.jar')
+    implementation 'com.google.android.gms:play-services-basement:16.0.0'
+    implementation 'com.google.android.gms:play-services-ads-identifier:16.0.0'
+    implementation (name: 'vungle_ads-release', ext: 'aar')
+
+    //腾讯优量汇
+    implementation(name: 'GDTSDK.unionNormal.4.176.1046', ext:'aar')
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+    implementation(name: 'txadnet_ads-release', ext: 'aar')
+
+    //头条穿山甲
+    implementation(name: 'open_ad_sdk', ext:'aar')
+    implementation(name: 'toutiao_ads-release', ext: 'aar')
+
+}
