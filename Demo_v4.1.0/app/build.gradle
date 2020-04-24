@@ -105,6 +105,12 @@ dependencies {
 
     //Vungle
     implementation 'com.vungle:publisher-sdk-android:6.4.11'
+    implementation files ('libs/converter-gson-2.5.0.jar')
+    implementation files ('libs/gson-2.8.2.jar')
+    implementation files ('libs/logging-interceptor-3.12.0.jar')
+    implementation files ('libs/okhttp-3.12.0.jar')
+    implementation files ('libs/okio-1.15.0.jar')
+    implementation files ('libs/retrofit-2.5.0.jar')
     implementation 'com.google.android.gms:play-services-basement:16.0.0'
     implementation 'com.google.android.gms:play-services-ads-identifier:16.0.0'
     implementation (name: 'vungle_ads-release', ext: 'aar')
