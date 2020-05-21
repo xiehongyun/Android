@@ -49,7 +49,7 @@ public class BannerActivity extends AppCompatActivity implements TradPlusView.FS
     @Override
     public void onAdViewClicked(TradPlusView tradPlusView) {
         //广告被点击
-        Log.d("TradPlus","Native Clicked");
+        Log.d("TradPlus","Banner Clicked");
     }
 
     @Override
