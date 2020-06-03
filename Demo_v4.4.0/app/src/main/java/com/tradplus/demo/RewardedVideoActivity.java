@@ -32,7 +32,7 @@ public class RewardedVideoActivity extends AppCompatActivity implements TradPlus
 
         /*
          * 1、参数2：AdUnitID，TradPlus后台设置 对应广告类型的广告位（非三方广告网络的placementId）
-         *          这里添加的是供测试使用的插屏广告位，正式上线前必须替换成您申请的广告位
+         *          这里添加的是供测试使用的激励视频广告位，正式上线前必须替换成您申请的广告位
          *
          *          注意广告位不能填错，否则无法拿到广告
          *

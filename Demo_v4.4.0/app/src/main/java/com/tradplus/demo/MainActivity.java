@@ -70,60 +70,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         requestOfferWall();
         //原生广告
         requestNative();
-        //原生信息流广告
-        requestNativeListView();
     }
 
-    private void setGDPR(){
-        //方法一：通过TradPlus提供的授权页面进行设置
-        //第一步：调用TradPlus GDPR监听
-        TradPlus.invoker().setmGDPRListener(new TradPlus.IGDPRListener() {
-            @Override
-            public void success(String s) {
-                //成功
-                //第二步：判断是否是欧盟用户
-                if (TradPlus.isEUTraffic(MainActivity.this)){
-                    //第三步：是，调用授权页面，让用户自己选择
-                    TradPlus.showUploadDataNotifyDialog(MainActivity.this, new ATGDPRAuthCallback() {
-                        @Override
-                        public void onAuthResult(int level) {
-                            Log.i("level", "onAuthResult: "+level);
-                        }
-                    }, Const.URL.GDPR_URL);
-                }   //否，则默认上报数据
-
-            }
-
-            @Override
-            public void failed(String s) {
-                //失败：未知国家
-                //方式一：调用授权页面让用户自己选择
-                TradPlus.showUploadDataNotifyDialog(MainActivity.this, new ATGDPRAuthCallback() {
-                    @Override
-                    public void onAuthResult(int level) {
-                        Log.i("level", "onAuthResult: "+level);
-                    }
-                }, Const.URL.GDPR_URL);
-
-                //方法二：设置TradPlus GDPR等级，让客户自己选择
-                int level = 0; //0,同意；1，拒绝
-                TradPlus.setGDPRUploadDataLevel(MainActivity.this,level);
-            }
-        });
-
-        //方法二：不使用TradPlus 提供的授权页面进行判断
-
-    }
-    private void requestNativeListView() {
-        Button nativelist_ad = (Button)findViewById(R.id.nativelist_ad);
-        nativelist_ad.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, NativeListViewActivity.class);
-                startActivity(intent);
-            }
-        });
-    }
 
     private void requestNative() {
         Button native_advanced_btn = (Button)findViewById(R.id.native_ad_advanced);

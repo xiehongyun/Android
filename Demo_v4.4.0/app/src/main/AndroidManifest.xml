@@ -63,9 +63,6 @@
             android:name=".NativeActivity"
             android:configChanges="keyboardHidden|orientation|screenSize" />
 
-        <activity
-            android:name=".NativeListViewActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize" />
 
 
     </application>
