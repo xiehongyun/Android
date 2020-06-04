@@ -182,6 +182,9 @@ public class RewardedVideoActivity extends AppCompatActivity implements TradPlus
         //unitId 是广告位ID
         //建议，监听该方法的false返回，当整个广告位加载失败的时候，手动load一次广告
         Log.d("TradPlus","RewardedVideo onLoadStatus = "+ b);
+        if(!b) {
+            mRewardInterstitial.load();
+        }
         runOnUiThread(new Runnable() {
             @Override
             public void run() {

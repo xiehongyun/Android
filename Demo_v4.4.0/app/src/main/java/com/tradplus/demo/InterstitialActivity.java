@@ -102,16 +102,6 @@ public class InterstitialActivity extends AppCompatActivity implements TradPlusI
                     });
                     mTradPlusInterstitial.load();
                 }
-
-                //方式三：自动reload不设置或设置为false
-//                if (mTradPlusInterstitial.isReady()) {
-//                    //展示广告
-//                    mTradPlusInterstitial.show();
-//                }else {
-//                    mTradPlusInterstitial.load();
-//                }
-
-
             }
         });
 
@@ -180,6 +170,9 @@ public class InterstitialActivity extends AppCompatActivity implements TradPlusI
         * 建议，监听该方法的false返回，当整个广告位加载失败的时候，手动load一次广告
         */
         Log.d("TradPlus","Interstitial onLoadStatus = "+ b);
+        if(!b) {
+            mTradPlusInterstitial.load();
+        }
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
