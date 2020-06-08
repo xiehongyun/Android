@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Demo_v4.5.0</string>
+
+    <string name="init_sdk">SDK初始化 </string>
+    <string name="init_custom_sdk"> SDK初始化 自定义GDPR</string>
+    <string name="gdpr_upload_data">GDPR数据是否上报</string>
+    <string name="change_gdpr_select">更改GDPR数据上报选择</string>
+    <string name="load_ad">进入加载广告页面</string>
+</resources>
