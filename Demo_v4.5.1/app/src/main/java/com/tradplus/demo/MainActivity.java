@@ -306,8 +306,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        TradPlus.setIsCNLanguageLog(true);//Log中文模式
         //设置测试模式，正式上线前注释
         TestDeviceUtil.getInstance().setNeedTestDevice(true);
-        TradPlus.setLocalDebugMode(true);
-        TradPlus.setDebugMode(true);
     }
 
     private void initSdk1() {
